@@ -9342,3 +9342,13 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     -webkit-text-stroke-color: #ef5350;
     -webkit-text-stroke-width: 2px;
 }
+
+#listaCaract1 {
+    text-align: left;
+}
+#listaCaract2 {
+    text-align: center;
+}
+#listaCaract3 {
+    text-align: right;
+}

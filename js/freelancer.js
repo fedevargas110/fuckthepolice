@@ -47,3 +47,9 @@
   });
 
 })(jQuery); // End of use strict
+
+function xd(){
+    console.log("funciona");
+}
+
+
