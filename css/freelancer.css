@@ -253,8 +253,8 @@ header.masthead {
 
 .portfolio-modal .close-modal {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 1%;
+  right: 1%;
   width: 75px;
   height: 75px;
   cursor: pointer;
@@ -361,8 +361,8 @@ footer {
 .btn-primary {
   font-weight: 700;
   color: white;
-  border-color: #2C3E50;
-  background-color: #2C3E50; }
+  border-color: #ef5350;
+  background-color: #ef5350; }
   .btn-primary.focus, .btn-primary:focus {
     color: white;
     border-color: black;
