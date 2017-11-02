@@ -9359,3 +9359,18 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     align-items: center;
     text-align: right;
 }
+
+#achicador {
+    height: 213px;
+}
+
+
+
+#btn_up {
+    margin-left: -7px;
+}
+
+#subclase {
+    font-weight:400;
+    color:white;
+}
