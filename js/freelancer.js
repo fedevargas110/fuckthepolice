@@ -81,10 +81,8 @@ function cargarRelojes(tipo) {
             })
 
             $(btn).addClass("btn btn-outline-success");
-            $("button").attr("data-toggle", "modal");
 
             btn.innerHTML = `${s.val().Precio}$`;
-
 
             div.append(img);
             div.append(h5);
@@ -96,6 +94,8 @@ function cargarRelojes(tipo) {
 }
 
 $(document).ready(e => {
+    cargarRelojes("Siempre");
     cargarRelojes("Deportivos");
     cargarRelojes("Lujo");
+    cargarRelojes("Clasicos");
 })
