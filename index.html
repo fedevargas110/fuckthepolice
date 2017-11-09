@@ -20,6 +20,21 @@
         <!-- Custom styles for this template -->
         <link href="css/freelancer.css" rel="stylesheet">
 
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDxJnFFYwtvv-hiU0SW8t2q8X440Je9fWA",
+                authDomain: "southern-b4af4.firebaseapp.com",
+                databaseURL: "https://southern-b4af4.firebaseio.com",
+                projectId: "southern-b4af4",
+                storageBucket: "southern-b4af4.appspot.com",
+                messagingSenderId: "239237624298"
+            };
+            firebase.initializeApp(config);
+        </script>
+
     </head>
 
     <body>
@@ -85,7 +100,6 @@
                 </div>
             </div>
         </header>
-
         <!-- Portfolio Grid Section -->
         <section id="portfolio">
             <div class="container">
@@ -228,49 +242,8 @@
                                         <div class="col-sm-12 portfolio-item"><h2>Deportivo</h2></div>
                                     </div>
                                     <hr class="star-primary">
-                                    <div class="row">
-                                        <div class="col-sm-4 portfolio-item">
-                                            <img class="img-fluid" src="img/portfolio/relojDeportivo1.jpg" alt="">
-                                            <h5>Casio sgw400h1b</h5>
-                                            <p></p>
-                                            <ul id="listaCaract1">
-                                                <li>Reloj Digital</li>
-                                                <li>Cristal Mineral</li>
-                                                <li>Caja de Resina</li>
-                                                <li>Correa de Resina</li>
-                                                <li>Resistente al agua</li>
-                                                <li>Ademas: Cronómetro, alarma y calendario</li>
-                                            </ul>
-                                            <button type="button" class="btn btn-outline-success" onclick="xd()">Comprar</button>
-                                        </div>
-                                        <div class="col-sm-4 portfolio-item">
-                                            <img class="img-fluid" src="img/portfolio/relojDeportivo2.jpg" alt="">
-                                            <h5>Casio AQS810W</h5>
-                                            <p></p>
-                                            <ul id="listaCaract1">
-                                                <li>Reloj Analogico y Digital</li>
-                                                <li>Cristal de Resina</li>
-                                                <li>Caja de resina y acero inoxidable</li>
-                                                <li>Correa de Resina</li>
-                                                <li>Resistente al agua</li>
-                                                <li>Ademas: Calendario</li>
-                                            </ul>
-                                            <button type="button" class="btn btn-outline-success" onclick="xd()">Comprar</button>
-                                        </div>
-                                        <div class="col-sm-4 portfolio-item">
-                                            <img class="img-fluid" src="img/portfolio/relojDeportivo3.jpg" alt="">
-                                            <h5>Casio SGW1000</h5>
-                                            <p></p>
-                                            <ul id="listaCaract1">
-                                                <li>Reloj Digital</li>
-                                                <li>Cristal Mineral</li>
-                                                <li>Caja de Resina</li>
-                                                <li>Correa de Resina</li>
-                                                <li>Resistente al agua</li>
-                                                <li>Ademas: Alarma y cronometro</li>
-                                            </ul>
-                                            <button type="button" class="btn btn-outline-success" onclick="xd()">Comprar</button>
-                                        </div>
+                                    <div id="lista_Deportivos" class="row">
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +268,7 @@
                                         <div class="col-sm-12 portfolio-item"><h2>De lujo</h2></div>
                                     </div>
                                     <hr class="star-primary">
-                                    <div class="row">
+                                    <div id="lista_Lujo" class="row">
                                         <div class="col-sm-4 portfolio-item">
                                             <img class="img-fluid" src="img/portfolio/relojDeLujo1.jpg" alt="">
                                             <h5>Bulova precisionist 98b172</h5>
@@ -424,7 +397,7 @@
                             <div class="col-lg-8 mx-auto">
                                 <div class="modal-body">
                                     <div class="row">
-                                        <div class="col-sm-12 portfolio-item"><h2>De lujo</h2></div>
+                                        <div class="col-sm-12 portfolio-item"><h2>Clasicos</h2></div>
                                     </div>
                                     <hr class="star-primary">
                                     <div class="row">
@@ -471,6 +444,19 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="portfolio-modal modal fade" id="formulario2" tabindex="-1" role="dialog" aria-hidden="false">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl"></div>
                         </div>
                     </div>
                 </div>

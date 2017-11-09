@@ -9322,6 +9322,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
 .main-text {
     position: absolute;
     top: 10%;
@@ -9345,14 +9346,8 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     -webkit-text-stroke-width: 2px;
 }
 
-#listaCaract1 {
+.listaCaract {
     text-align: left;
-}
-#listaCaract2 {
-    text-align: center;
-}
-#listaCaract3 {
-    text-align: right;
 }
 
 #centrator {
@@ -9364,8 +9359,6 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     height: 213px;
 }
 
-
-
 #btn_up {
     margin-left: -7px;
 }
@@ -9374,3 +9367,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     font-weight:400;
     color:white;
 }
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+
