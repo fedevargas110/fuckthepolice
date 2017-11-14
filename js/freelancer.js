@@ -135,6 +135,35 @@ function comprar(nId){
 
 }
 
+function validador(){
+    var nombre = document.getElementById("inputNombre");
+    var numero = document.getElementById("inputNumero");
+    var cvv = document.getElementById("inputCVV");
+
+    if( isNaN(numero) ) {
+        return false;
+    }
+
+    if( nombre == null || nombre.length == 0 || /^\s+$/.test(nombre) ) {
+        alert('[ERROR] El campo debe tener un valor de...');
+        return false;
+    }
+    else if (condicion que debe cumplir el segundo campo del formulario) {
+        // Si no se cumple la condicion...
+        alert('[ERROR] El campo debe tener un valor de...');
+        return false;
+    }
+    ...
+    else if (condicion que debe cumplir el último campo del formulario) {
+        // Si no se cumple la condicion...
+        alert('[ERROR] El campo debe tener un valor de...');
+        return false;
+    }
+
+    return true;
+
+}
+
 $(document).ready(e => {
     cargarRelojes("Siempre");
     cargarRelojes("Deportivos");
