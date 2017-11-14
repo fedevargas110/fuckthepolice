@@ -100,6 +100,7 @@
                 </div>
             </div>
         </header>
+
         <!-- Portfolio Grid Section -->
         <section id="portfolio">
             <div class="container">
@@ -107,7 +108,7 @@
                 <hr class="star-primary">
                 <div class="row">
                     <div class="col-sm-6 portfolio-item">
-                        <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+                        <a class="portfolio-link" href="#formulario" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-2x"></i>
@@ -330,12 +331,112 @@
         </div>
 
         <!-- Formulario -->
-        <div class="portfolio-modal modal fade" id="formulario2" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="portfolio-modal modal fade" id="formulario" tabindex="-1" role="dialog" aria-hidden="false">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal">
                         <div class="lr">
                             <div class="rl"></div>
+                        </div>                       
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-sm-12 portfolio-item"><h3>Validar Compra</h3></div>
+                                    </div>
+                                    <hr class="star-primary">
+                                    <form class="txtForm">
+                                        <div class="row">
+                                            <div class="form-group col-md-7">
+                                                <label for="inputNombre">Nombre</label>
+                                                <input type="text" class="form-control" id="inputNombre" placeholder="Juan Carlos Estofado">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-md-9">
+                                                <label for="inputNumero">Numero de tarjeta</label>
+                                                <input type="text" class="form-control" id="inputNumero" placeholder="2837710573192844">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputCVV">CVV</label>
+                                                <input type="text" class="form-control" id="inputNumero" placeholder="441">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputVencimiento">Fecha de Vencimiento</label>
+                                                <div class="row">
+                                                    <div class="form-group col-md-7 col-sm-7">
+                                                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputMesVencimiento">
+                                                            <option value="01">January</option>
+                                                            <option value="02">February </option>
+                                                            <option value="03">March</option>
+                                                            <option value="04">April</option>
+                                                            <option value="05">May</option>
+                                                            <option value="06">June</option>
+                                                            <option value="07">July</option>
+                                                            <option value="08">August</option>
+                                                            <option value="09">September</option>
+                                                            <option value="10">October</option>
+                                                            <option value="11">November</option>
+                                                            <option value="12">December</option>
+                                                        </select>
+                                                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputAñoVencimiento">
+                                                            <option value="17"> 2017</option>
+                                                            <option value="18"> 2018</option>
+                                                            <option value="19"> 2019</option>
+                                                            <option value="20"> 2020</option>
+                                                            <option value="21"> 2021</option>
+                                                            <option value="21"> 2022</option>
+                                                            <option value="21"> 2023</option>
+                                                        </select>    
+                                                    </div>
+                                                    <div class="form-group col-md-4 col-sm-5">
+                                                        <div class="form-group">
+                                                            <img src="img/visa.jpg" id="imgMini">
+                                                            <img src="img/mastercard.jpg" id="imgMini">
+                                                            <img src="img/amex.jpg" id="imgMini">
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputDireccion">Direccion</label>
+                                            <input type="text" class="form-control" id="inputDireccion" placeholder="Bv. Los Granaderos 2769">
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputLocalidad">Localidad</label>
+                                                <input type="text" class="form-control" id="inputCity" placeholder="Capital">
+                                            </div>
+                                            <div class="form-group col-md-4 col-sm-8">
+                                                <label for="inputProvincia">Provincia</label>
+                                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0 col-sm-8" id="inputProvincia">
+                                                    <option value="01">Buenos Aires</option>
+                                                    <option value="02">Cordoba</option>
+                                                    <option value="03">Santa Fe</option>    
+                                                    <option value="04">Mendoza</option>
+                                                    <option value="05">San Luis</option>
+                                                    <option value="06">La Pampa</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-2 col-sm-4">
+                                                <label for="inputZip">Zip</label>
+                                                <input type="text" class="form-control" id="inputZip" placeholder="5001">
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary">COMPRAR</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

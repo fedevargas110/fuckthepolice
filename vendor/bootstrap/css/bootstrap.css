@@ -4145,6 +4145,7 @@ tbody.collapse.show {
     border-radius: 0.25rem;
     -moz-appearance: none;
     -webkit-appearance: none;
+    font-size: 16px;
 }
 
 .custom-select:focus {
@@ -9879,4 +9880,15 @@ a.text-gray-dark:hover {
 
 .pl-ziro {
     padding-left: 0px;
+}
+
+    .txtForm {
+    text-align: left;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+#imgMini {
+    width: 50px;
+    height: auto;
 }
