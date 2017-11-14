@@ -49,15 +49,12 @@
 })(jQuery); // End of use strict
 
 //Lee firebase
-
+var x = 0;
 function cargarRelojes(tipo) {
-    console.log(tipo);
     let fbdb = firebase.database();
     let relojes = fbdb.ref(`/Relojes/${tipo}/`);
     relojes.on("value", snap => {
         snap.forEach(s => {
-            console.log(s.val().Nombre);
-            console.log(tipo);
             const div = document.createElement("div");
             const h5 = document.createElement("h5");
             const img = document.createElement("img");
@@ -67,10 +64,10 @@ function cargarRelojes(tipo) {
             div.classList = "col-sm-4 portfolio-item";
             div.id = s.key;
 
+            h5.innerHTML = s.val().Nombre;
+
             img.src = s.val().Imagen;
             img.classList = "img-fluid";
-
-            h5.innerHTML = s.val().Nombre;
 
             ul.classList = "listaCaract";
 
@@ -80,17 +77,62 @@ function cargarRelojes(tipo) {
                 ul.append(li);
             })
 
-            $(btn).addClass("btn btn-outline-success");
+            x = x + 1;            
+            btn.id = "btnComprar_" + x;
+            console.log(btn.id);
 
+            btn.setAttribute( "onClick", "javascript: comprar(this.id);");
+
+            $(btn).addClass("btn btn-outline-success");
             btn.innerHTML = `${s.val().Precio}$`;
 
-            div.append(img);
+            div.append(img)
             div.append(h5);
             div.append(ul);
             div.append(btn);
             $(`#lista_${tipo}`).append(div);
         })
     })
+}
+
+function comprar(nId){    
+    if (nId.substr(11, 2) == 1){
+        console.log("comprar1");    
+    }
+    if (nId.substr(11, 2) == 2){
+        console.log("comprar2");    
+    }
+    if (nId.substr(11, 2) == 3){
+        console.log("comprar3");    
+    }
+    if (nId.substr(11, 2) == 4){
+        console.log("comprar4");    
+    }
+    if (nId.substr(11, 2) == 5){
+        console.log("comprar5");    
+    }
+    if (nId.substr(11, 2) == 6){
+        console.log("comprar6");    
+    }
+    if (nId.substr(11, 2) == 7){
+        console.log("comprar7");    
+    }
+    if (nId.substr(11, 2) == 8){
+        console.log("comprar8");    
+    }
+    if (nId.substr(11, 2) == 9){
+        console.log("comprar9");    
+    }
+    if (nId.substr(11, 2) == 10){
+        console.log("comprar10");    
+    }
+    if (nId.substr(11, 2) == 11){
+        console.log("comprar11");    
+    }
+    if (nId.substr(11, 2) == 12){
+        console.log("comprar12");    
+    }
+
 }
 
 $(document).ready(e => {
