@@ -74,7 +74,7 @@
         </nav>
 
         <!-- Header -->
-        <header class="masthead">
+        <header class="masthead  d-none d-lg-block">
             <div class="container">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -104,7 +104,7 @@
         <!-- Portfolio Grid Section -->
         <section id="portfolio">
             <div class="container">
-                <h2 class="text-center">¿Cual es tu estilo?</h2>
+                <h2 class="text-center mt-sm-1">¿Cual es tu estilo?</h2>
                 <hr class="star-primary">
                 <div class="row">
                     <div class="col-sm-6 portfolio-item">
@@ -347,14 +347,13 @@
                                         <div class="col-sm-12 portfolio-item"><h3>Validar Compra</h3></div>
                                     </div>
                                     <hr class="star-primary">
-                                    <form class="txtForm" onsubmit="return validador()">
+                                    <form class="txtForm">
                                         <div class="row">
                                             <div class="form-group col-md-7">
                                                 <label for="inputNombre">Nombre</label>
                                                 <input type="text" class="form-control" id="inputNombre" placeholder="Juan Carlos Estofado">
                                             </div>
                                         </div>
-
                                         <div class="row">
                                             <div class="form-group col-md-9">
                                                 <label for="inputNumero">Numero de tarjeta</label>
@@ -364,36 +363,36 @@
                                                 <label for="inputCVV">CVV</label>
                                                 <input type="text" class="form-control" id="inputCVV" placeholder="441">
                                             </div>
-
                                         </div>
-
                                         <div class="row">
                                             <div class="form-group col-md-12">
                                                 <label for="inputVencimiento">Fecha de Vencimiento</label>
                                                 <div class="row">
                                                     <div class="form-group col-md-7 col-sm-7">
                                                         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputMesVencimiento">
-                                                            <option value="01">January</option>
-                                                            <option value="02">February </option>
-                                                            <option value="03">March</option>
-                                                            <option value="04">April</option>
-                                                            <option value="05">May</option>
-                                                            <option value="06">June</option>
-                                                            <option value="07">July</option>
-                                                            <option value="08">August</option>
-                                                            <option value="09">September</option>
-                                                            <option value="10">October</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">December</option>
+                                                            <option value="01">Elegir opcion</option>
+                                                            <option value="02">Enero</option>
+                                                            <option value="03">Febrero </option>
+                                                            <option value="04">Marzo</option>
+                                                            <option value="05">Abril</option>
+                                                            <option value="06">Mayo</option>
+                                                            <option value="07">Junio</option>
+                                                            <option value="08">Julio</option>
+                                                            <option value="09">Agosto</option>
+                                                            <option value="10">Septiembre</option>
+                                                            <option value="11">Octubre</option>
+                                                            <option value="12">Noviembre</option>
+                                                            <option value="13">Diciembre</option>
                                                         </select>
                                                         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputAñoVencimiento">
-                                                            <option value="17"> 2017</option>
-                                                            <option value="18"> 2018</option>
-                                                            <option value="19"> 2019</option>
-                                                            <option value="20"> 2020</option>
-                                                            <option value="21"> 2021</option>
-                                                            <option value="21"> 2022</option>
-                                                            <option value="21"> 2023</option>
+                                                            <option value="01">Elegir opcion</option>
+                                                            <option value="2017"> 2017</option>
+                                                            <option value="2018"> 2018</option>
+                                                            <option value="2019"> 2019</option>
+                                                            <option value="2020"> 2020</option>
+                                                            <option value="2021"> 2021</option>
+                                                            <option value="2021"> 2022</option>
+                                                            <option value="2021"> 2023</option>
                                                         </select>    
                                                     </div>
                                                     <div class="form-group col-md-4 col-sm-5">
@@ -414,7 +413,7 @@
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputLocalidad">Localidad</label>
-                                                <input type="text" class="form-control" id="inputCity" placeholder="Capital">
+                                                <input type="text" class="form-control" id="inputLocalidad" placeholder="Cordoba">
                                             </div>
                                             <div class="form-group col-md-4 col-sm-8">
                                                 <label for="inputProvincia">Provincia</label>
@@ -432,9 +431,8 @@
                                                 <input type="text" class="form-control" id="inputZip" placeholder="5001">
                                             </div>
                                         </div>
-                                        
-                                        <button type="submit" class="btn btn-primary">COMPRAR</button>
                                     </form>
+                                    <button type="submit" class="btn btn-success" id="confirm" onclick="validador()">COMPRAR</button>
                                 </div>
                             </div>
                         </div>

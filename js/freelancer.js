@@ -135,34 +135,32 @@ function comprar(nId){
 
 }
 
+
 function validador(){
-    var nombre = document.getElementById("inputNombre");
-    var numero = document.getElementById("inputNumero");
-    var cvv = document.getElementById("inputCVV");
+    var nombre = document.getElementById("inputNombre").value;
+    var numero = document.getElementById("inputNumero").value;
+    var cvv = document.getElementById("inputCVV").value;
+    var mes = document.getElementById("inputMesVencimiento").selectedIndex;
+    var año = document.getElementById("inputAñoVencimiento").selectedIndex;
 
-    if( isNaN(numero) ) {
-        return false;
+    
+    if( nombre == null || nombre.length == 0 || /^\s+$/.test(nombre) || nombre.length <= 4 ) {
+        console.log("El nombre esta vacio");
     }
 
-    if( nombre == null || nombre.length == 0 || /^\s+$/.test(nombre) ) {
-        alert('[ERROR] El campo debe tener un valor de...');
-        return false;
-    }
-    else if (condicion que debe cumplir el segundo campo del formulario) {
-        // Si no se cumple la condicion...
-        alert('[ERROR] El campo debe tener un valor de...');
-        return false;
-    }
-    ...
-    else if (condicion que debe cumplir el último campo del formulario) {
-        // Si no se cumple la condicion...
-        alert('[ERROR] El campo debe tener un valor de...');
-        return false;
+    if (numero == null || numero.length == 0 || /^\s+$/.test(numero) || isNaN(numero) || numero % 1 != 0 || numero <= 0 || numero.length <= 14 || numero.length >= 18){
+        console.log("El numero es invalido");
     }
 
-    return true;
+    if (cvv == null || cvv.length == 0 || /^\s+$/.test(cvv) || isNaN(cvv) || cvv % 1 != 0 || cvv <= 0 || cvv.length <= 2 || cvv.length >= 4 ){
+        console.log("El CVV");
+    }
 
-}
+    if( mes == null || mes == 0 || año == null || año == 0 ) {
+        console.log("La fecha es incorrecta");
+    }
+
+};
 
 $(document).ready(e => {
     cargarRelojes("Siempre");
