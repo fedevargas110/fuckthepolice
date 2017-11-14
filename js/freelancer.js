@@ -77,12 +77,15 @@ function cargarRelojes(tipo) {
                 ul.append(li);
             })
 
-            x = x + 1;            
+            x = x + 1;         
             btn.id = "btnComprar_" + x;
             console.log(btn.id);
 
             btn.setAttribute( "onClick", "javascript: comprar(this.id);");
-
+            btn.setAttribute( "data-toggle", "modal");
+            btn.setAttribute( "href" , "#formulario");
+            
+            
             $(btn).addClass("btn btn-outline-success");
             btn.innerHTML = `${s.val().Precio}$`;
 
@@ -135,7 +138,6 @@ function comprar(nId){
 
 }
 
-
 function validador(){
     var nombre = document.getElementById("inputNombre").value;
     var numero = document.getElementById("inputNumero").value;
@@ -143,21 +145,41 @@ function validador(){
     var mes = document.getElementById("inputMesVencimiento").selectedIndex;
     var año = document.getElementById("inputAñoVencimiento").selectedIndex;
 
-    
+    var dir = document.getElementById("inputDireccion").value;
+    var locali = document.getElementById("inputLocalidad").value;
+    var prov = document.getElementById("inputProvincia").value;
+    var zip = document.getElementById("inputZip").value;
+
     if( nombre == null || nombre.length == 0 || /^\s+$/.test(nombre) || nombre.length <= 4 ) {
-        console.log("El nombre esta vacio");
+        console.log("El nombre es incorrecto");
     }
 
     if (numero == null || numero.length == 0 || /^\s+$/.test(numero) || isNaN(numero) || numero % 1 != 0 || numero <= 0 || numero.length <= 14 || numero.length >= 18){
-        console.log("El numero es invalido");
+        console.log("El numero es incorrecto");
     }
 
     if (cvv == null || cvv.length == 0 || /^\s+$/.test(cvv) || isNaN(cvv) || cvv % 1 != 0 || cvv <= 0 || cvv.length <= 2 || cvv.length >= 4 ){
-        console.log("El CVV");
+        console.log("El CVV es incorrecto");
     }
 
     if( mes == null || mes == 0 || año == null || año == 0 ) {
         console.log("La fecha es incorrecta");
+    }
+
+    if( dir == null || dir.length == 0 || /^\s+$/.test(dir) || dir.length <= 8 ) {
+        console.log("La direccion es incorrecto");
+    }
+
+    if( locali == null || locali.length == 0 || /^\s+$/.test(locali) || locali.length <= 4 ) {
+        console.log("La localidad es incorrecto");
+    }
+
+    if( prov == null || prov == 0 ) {
+        console.log("La provincia es incorrecta");
+    }
+    
+    if (zip == null || zip.length == 0 || /^\s+$/.test(zip) || isNaN(zip) || zip % 1 != 0 || zip <= 0 || zip.length <= 3 || zip.length >= 6){
+        console.log("El zip es incorrecto");
     }
 
 };

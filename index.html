@@ -49,7 +49,7 @@
                         </button>
                     </div>
                     <div class="col-sm-6 col-md-4 col-6 text-right page-top" id="centrator">
-                        <a id="tituloRight" class="navbar-brand js-scroll-trigger">Southern</a>
+                        <a id="tituloRight" class="navbar-brand js-scroll-trigger">Southern</a>    
                         <img class="img-fluid2" alt="Responsive image" src="img/logoSouthern2.png">
                     </div>
                 </div>
@@ -74,7 +74,7 @@
         </nav>
 
         <!-- Header -->
-        <header class="masthead  d-none d-lg-block">
+        <header class="masthead d-none d-lg-block">
             <div class="container">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -108,7 +108,7 @@
                 <hr class="star-primary">
                 <div class="row">
                     <div class="col-sm-6 portfolio-item">
-                        <a class="portfolio-link" href="#formulario" data-toggle="modal">
+                        <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-2x"></i>
@@ -228,7 +228,7 @@
         </div>
 
         <!-- Portfolio Modals -->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="portfolioModal1" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-focus-on="input:first">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal">
@@ -253,7 +253,7 @@
                 </div>
             </div>
         </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="portfolioModal2" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-focus-on="input:first">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal">
@@ -278,7 +278,7 @@
                 </div>
             </div>
         </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="portfolioModal3" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-focus-on="input:first">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal">
@@ -304,7 +304,7 @@
                 </div>
             </div>
         </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="portfolioModal4" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-focus-on="input:first">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal">
@@ -331,7 +331,7 @@
         </div>
 
         <!-- Formulario -->
-        <div class="portfolio-modal modal fade" id="formulario" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="portfolio-modal modal fade" id="formulario" tabindex="-1" role="dialog" aria-hidden="true" data-focus-on="input:first">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="close-modal" data-dismiss="modal">
@@ -350,23 +350,23 @@
                                     <form class="txtForm">
                                         <div class="row">
                                             <div class="form-group col-md-7">
-                                                <label for="inputNombre">Nombre</label>
+                                                <label for="inputNombre">Nombre *</label>
                                                 <input type="text" class="form-control" id="inputNombre" placeholder="Juan Carlos Estofado">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-9">
-                                                <label for="inputNumero">Numero de tarjeta</label>
+                                                <label for="inputNumero">Numero de tarjeta *</label>
                                                 <input type="text" class="form-control" id="inputNumero" placeholder="2837710573192844">
                                             </div>
                                             <div class="form-group col-md-3">
-                                                <label for="inputCVV">CVV</label>
+                                                <label for="inputCVV">CVV *</label>
                                                 <input type="text" class="form-control" id="inputCVV" placeholder="441">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-12">
-                                                <label for="inputVencimiento">Fecha de Vencimiento</label>
+                                                <label for="inputVencimiento">Fecha de Vencimiento *</label>
                                                 <div class="row">
                                                     <div class="form-group col-md-7 col-sm-7">
                                                         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputMesVencimiento">
@@ -407,17 +407,18 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="inputDireccion">Direccion</label>
+                                            <label for="inputDireccion">Direccion *</label>
                                             <input type="text" class="form-control" id="inputDireccion" placeholder="Bv. Los Granaderos 2769">
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputLocalidad">Localidad</label>
+                                                <label for="inputLocalidad">Localidad *</label>
                                                 <input type="text" class="form-control" id="inputLocalidad" placeholder="Cordoba">
                                             </div>
                                             <div class="form-group col-md-4 col-sm-8">
-                                                <label for="inputProvincia">Provincia</label>
+                                                <label for="inputProvincia">Provincia *</label>
                                                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0 col-sm-8" id="inputProvincia">
+                                                    <option value="00">Elegir opcion</option>
                                                     <option value="01">Buenos Aires</option>
                                                     <option value="02">Cordoba</option>
                                                     <option value="03">Santa Fe</option>    
@@ -427,12 +428,14 @@
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-2 col-sm-4">
-                                                <label for="inputZip">Zip</label>
+                                                <label for="inputZip">Zip *</label>
                                                 <input type="text" class="form-control" id="inputZip" placeholder="5001">
                                             </div>
                                         </div>
                                     </form>
-                                    <button type="submit" class="btn btn-success" id="confirm" onclick="validador()">COMPRAR</button>
+                                    <label>* Campos obligatorios</label>
+                                    <p></p>
+                                    <button type="submit" class="btn btn-success btn-lg" id="confirm" onclick="validador()">COMPRAR</button>
                                 </div>
                             </div>
                         </div>
@@ -440,7 +443,7 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.js"></script>
         <script src="vendor/popper/popper.min.js"></script>
