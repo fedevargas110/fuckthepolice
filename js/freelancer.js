@@ -77,19 +77,21 @@ function cargarRelojes(tipo) {
                 ul.append(li);
             })
 
-            x = x + 1;         
-            btn.id = "btnComprar_" + x;
+            btn.id = s.key;
             console.log(btn.id);
 
-            btn.setAttribute( "onClick", "javascript: comprar(this.id);");
+            
+            btn.onclick = () => {
+                console.log(btn.id);
+                $("#modelo").text(btn.id);
+            };
             btn.setAttribute( "data-toggle", "modal");
             btn.setAttribute( "href" , "#formulario");
             
             
             $(btn).addClass("btn btn-outline-success");
             btn.innerHTML = `${s.val().Precio}$`;
-
-            div.append(img)
+            div.append(img);
             div.append(h5);
             div.append(ul);
             div.append(btn);
@@ -98,52 +100,15 @@ function cargarRelojes(tipo) {
     })
 }
 
-function comprar(nId){    
-    if (nId.substr(11, 2) == 1){
-        console.log("comprar1");    
-    }
-    if (nId.substr(11, 2) == 2){
-        console.log("comprar2");    
-    }
-    if (nId.substr(11, 2) == 3){
-        console.log("comprar3");    
-    }
-    if (nId.substr(11, 2) == 4){
-        console.log("comprar4");    
-    }
-    if (nId.substr(11, 2) == 5){
-        console.log("comprar5");    
-    }
-    if (nId.substr(11, 2) == 6){
-        console.log("comprar6");    
-    }
-    if (nId.substr(11, 2) == 7){
-        console.log("comprar7");    
-    }
-    if (nId.substr(11, 2) == 8){
-        console.log("comprar8");    
-    }
-    if (nId.substr(11, 2) == 9){
-        console.log("comprar9");    
-    }
-    if (nId.substr(11, 2) == 10){
-        console.log("comprar10");    
-    }
-    if (nId.substr(11, 2) == 11){
-        console.log("comprar11");    
-    }
-    if (nId.substr(11, 2) == 12){
-        console.log("comprar12");    
-    }
 
-}
 
 function validador(){
+    let nId = $("#modelo").text();
     var nombre = document.getElementById("inputNombre").value;
     var numero = document.getElementById("inputNumero").value;
     var cvv = document.getElementById("inputCVV").value;
-    var mes = document.getElementById("inputMesVencimiento").selectedIndex;
-    var año = document.getElementById("inputAñoVencimiento").selectedIndex;
+    var mes = document.getElementById("inputMesVencimiento").value;
+    var año = document.getElementById("inputAñoVencimiento").value;
 
     var dir = document.getElementById("inputDireccion").value;
     var locali = document.getElementById("inputLocalidad").value;
@@ -181,8 +146,24 @@ function validador(){
     if (zip == null || zip.length == 0 || /^\s+$/.test(zip) || isNaN(zip) || zip % 1 != 0 || zip <= 0 || zip.length <= 3 || zip.length >= 6){
         console.log("El zip es incorrecto");
     }
-
+     comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip);
 };
+
+function comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip){  
+    const fbdbCompra = firebase.database().ref(`/Compras/${nId}/`);
+    fbdbCompra.push({
+        "0_id": nId,
+        "1_nombre": nombre,
+        "2_numero": numero,
+        "3_cvv": cvv,
+        "4_mes": mes,
+        "5_año": año,
+        "6_dir": dir,
+        "7_locali": locali,
+        "8_prov": prov,
+        "9_zip": zip
+    });
+}
 
 $(document).ready(e => {
     cargarRelojes("Siempre");
