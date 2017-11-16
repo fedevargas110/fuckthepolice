@@ -78,17 +78,13 @@ function cargarRelojes(tipo) {
             })
 
             btn.id = s.key;
-            console.log(btn.id);
 
-            
             btn.onclick = () => {
-                console.log(btn.id);
                 $("#modelo").text(btn.id);
             };
             btn.setAttribute( "data-toggle", "modal");
-            btn.setAttribute( "href" , "#formulario");
-            
-            
+            btn.setAttribute( "onclick" , "modalFixer()");
+
             $(btn).addClass("btn btn-outline-success");
             btn.innerHTML = `${s.val().Precio}$`;
             div.append(img);
@@ -99,8 +95,6 @@ function cargarRelojes(tipo) {
         })
     })
 }
-
-
 
 function validador(){
     let nId = $("#modelo").text();
@@ -142,11 +136,11 @@ function validador(){
     if( prov == null || prov == 0 ) {
         console.log("La provincia es incorrecta");
     }
-    
+
     if (zip == null || zip.length == 0 || /^\s+$/.test(zip) || isNaN(zip) || zip % 1 != 0 || zip <= 0 || zip.length <= 3 || zip.length >= 6){
         console.log("El zip es incorrecto");
     }
-     comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip);
+    comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip);
 };
 
 function comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip){  
@@ -162,6 +156,17 @@ function comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip){
         "7_locali": locali,
         "8_prov": prov,
         "9_zip": zip
+    });
+}
+
+function modalFixer(){
+    $('#formulario').modal('show');
+
+    $('.modal').on("hidden.bs.modal", function (e) { 
+        console.log("ssssssssss");
+        if ($('.modal:visible').length) {
+            $('body').addClass('modal-open'); 
+        }
     });
 }
 
