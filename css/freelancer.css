@@ -123,8 +123,8 @@ section.success {
       #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
         color: white; }
   #mainNav .navbar-toggler {
-    font-size: 14px;
-    padding: 11px;
+    font-size: 16px;
+    padding: 15px;
     text-transform: uppercase;
     color: white;
     border-color: white; }
@@ -448,3 +448,5 @@ footer {
 .btn:active,
 .btn:focus {
   outline: none; }
+
+///////////////////////////////////////////////////////

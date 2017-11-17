@@ -80,10 +80,10 @@ function cargarRelojes(tipo) {
             btn.id = s.key;
 
             btn.onclick = () => {
-                $("#modelo").text(btn.id);
+                $("#modelo").text(s.val().Nombre);
+                modalFixer();
             };
             btn.setAttribute( "data-toggle", "modal");
-            btn.setAttribute( "onclick" , "modalFixer()");
 
             $(btn).addClass("btn btn-outline-success");
             btn.innerHTML = `${s.val().Precio}$`;
@@ -97,6 +97,7 @@ function cargarRelojes(tipo) {
 }
 
 function validador(){
+    var todo_correcto = true;
     let nId = $("#modelo").text();
     var nombre = document.getElementById("inputNombre").value;
     var numero = document.getElementById("inputNumero").value;
@@ -110,43 +111,40 @@ function validador(){
     var zip = document.getElementById("inputZip").value;
 
     if( nombre == null || nombre.length == 0 || /^\s+$/.test(nombre) || nombre.length <= 4 ) {
-        console.log("El nombre es incorrecto");
+        todo_correcto = false;
     }
-
     if (numero == null || numero.length == 0 || /^\s+$/.test(numero) || isNaN(numero) || numero % 1 != 0 || numero <= 0 || numero.length <= 14 || numero.length >= 18){
-        console.log("El numero es incorrecto");
+        todo_correcto = false;
     }
-
     if (cvv == null || cvv.length == 0 || /^\s+$/.test(cvv) || isNaN(cvv) || cvv % 1 != 0 || cvv <= 0 || cvv.length <= 2 || cvv.length >= 4 ){
-        console.log("El CVV es incorrecto");
+        todo_correcto = false;
     }
-
-    if( mes == null || mes == 0 || año == null || año == 0 ) {
-        console.log("La fecha es incorrecta");
+    if( mes == null || mes == 0 || año == null || año == 0 ){
+        todo_correcto = false;
     }
-
     if( dir == null || dir.length == 0 || /^\s+$/.test(dir) || dir.length <= 8 ) {
-        console.log("La direccion es incorrecto");
+        todo_correcto = false;
     }
-
     if( locali == null || locali.length == 0 || /^\s+$/.test(locali) || locali.length <= 4 ) {
-        console.log("La localidad es incorrecto");
+        todo_correcto = false;
     }
-
     if( prov == null || prov == 0 ) {
-        console.log("La provincia es incorrecta");
+        todo_correcto = false;
+    }
+    if (zip == null || zip.length == 0 || /^\s+$/.test(zip) || isNaN(zip) || zip % 1 != 0 || zip <= 0 || zip.length <= 3 || zip.length >= 6){
+        todo_correcto = false;
     }
 
-    if (zip == null || zip.length == 0 || /^\s+$/.test(zip) || isNaN(zip) || zip % 1 != 0 || zip <= 0 || zip.length <= 3 || zip.length >= 6){
-        console.log("El zip es incorrecto");
+    if(!todo_correcto){
+        alert('Algunos campos no están correctos, vuelva a revisarlos');
+    }else{
+        comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip);
     }
-    comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip);
 };
 
 function comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip){  
     const fbdbCompra = firebase.database().ref(`/Compras/${nId}/`);
     fbdbCompra.push({
-        "0_id": nId,
         "1_nombre": nombre,
         "2_numero": numero,
         "3_cvv": cvv,
@@ -163,7 +161,6 @@ function modalFixer(){
     $('#formulario').modal('show');
 
     $('.modal').on("hidden.bs.modal", function (e) { 
-        console.log("ssssssssss");
         if ($('.modal:visible').length) {
             $('body').addClass('modal-open'); 
         }

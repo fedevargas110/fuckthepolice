@@ -10,8 +10,11 @@
 html {
     font-family: sans-serif;
     line-height: 1.15;
-    -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 body {
@@ -2642,8 +2645,7 @@ pre code {
     opacity: 1;
 }
 
-.form-control:disabled,
-.form-control[readonly] {
+.form-control:disabled, .form-control[readonly] {
     background-color: #eceeef;
     opacity: 1;
 }
@@ -6340,21 +6342,21 @@ button.close {
 }
 
 @supports ((-webkit-transform: translate3d(0,
-0,
-0)) or (transform: translate3d(0,
-0,
-0))) {
-    .carousel-item {
-        -webkit-transition: -webkit-transform 0.6s ease-in-out;
-        transition: -webkit-transform 0.6s ease-in-out;
-        -o-transition: -o-transform 0.6s ease-in-out;
-        transition: transform 0.6s ease-in-out;
-        transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out, -o-transform 0.6s ease-in-out;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -webkit-perspective: 1000px;
-        perspective: 1000px;
-    }
+    0,
+    0)) or (transform: translate3d(0,
+        0,
+        0))) {
+            .carousel-item {
+                -webkit-transition: -webkit-transform 0.6s ease-in-out;
+                transition: -webkit-transform 0.6s ease-in-out;
+                -o-transition: -o-transform 0.6s ease-in-out;
+                transition: transform 0.6s ease-in-out;
+                transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out, -o-transform 0.6s ease-in-out;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-perspective: 1000px;
+                perspective: 1000px;
+            }
 }
 
 .carousel-item.active,
@@ -6391,25 +6393,25 @@ button.close {
 }
 
 @supports ((-webkit-transform: translate3d(0,
-0,
-0)) or (transform: translate3d(0,
-0,
-0))) {
-    .carousel-item-next.carousel-item-left,
-    .carousel-item-prev.carousel-item-right {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    .carousel-item-next,
-    .active.carousel-item-right {
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    .carousel-item-prev,
-    .active.carousel-item-left {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
+    0,
+    0)) or (transform: translate3d(0,
+        0,
+        0))) {
+            .carousel-item-next.carousel-item-left,
+            .carousel-item-prev.carousel-item-right {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            .carousel-item-next,
+            .active.carousel-item-right {
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+            }
+            .carousel-item-prev,
+            .active.carousel-item-left {
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+            }
 }
 
 .carousel-control-prev,
@@ -9882,7 +9884,7 @@ a.text-gray-dark:hover {
     padding-left: 0px;
 }
 
-    .txtForm {
+.txtForm {
     text-align: left;
     font-weight: bolder;
     font-size: 1.3em;
@@ -9892,4 +9894,3 @@ a.text-gray-dark:hover {
     width: 50px;
     height: auto;
 }
-

@@ -2141,7 +2141,7 @@ if (typeof jQuery === 'undefined') {
                 if (this._backdrop) {
                     $(this._backdrop).remove();
                     this._backdrop = null;
-                    console.log("sacando backdrop");
+                    
                 }
             };
 
@@ -2243,7 +2243,7 @@ if (typeof jQuery === 'undefined') {
             Modal.prototype._setScrollbar = function _setScrollbar() {
                 var _this18 = this;
                 
-                console.log("seteando");
+                
 
                 if (this._isBodyOverflowing) {
                     // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
@@ -2271,7 +2271,7 @@ if (typeof jQuery === 'undefined') {
             };
 
             Modal.prototype._resetScrollbar = function _resetScrollbar() {
-                console.log("reseteando");
+                
                 // Restore fixed content padding
                 $(Selector.FIXED_CONTENT).each(function (index, element) {
                     var padding = $(element).data('padding-right');

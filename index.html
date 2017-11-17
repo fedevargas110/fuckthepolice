@@ -19,22 +19,6 @@
 
         <!-- Custom styles for this template -->
         <link href="css/freelancer.css" rel="stylesheet">
-
-        <!-- Firebase -->
-        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyDxJnFFYwtvv-hiU0SW8t2q8X440Je9fWA",
-                authDomain: "southern-b4af4.firebaseapp.com",
-                databaseURL: "https://southern-b4af4.firebaseio.com",
-                projectId: "southern-b4af4",
-                storageBucket: "southern-b4af4.appspot.com",
-                messagingSenderId: "239237624298"
-            };
-            firebase.initializeApp(config);
-        </script>
-
     </head>
 
     <body>
@@ -347,22 +331,24 @@
                                         <div class="col-sm-12 portfolio-item"><h3>Validar Compra</h3></div>
                                     </div>
                                     <hr class="star-primary">
-                                    <form class="txtForm">
+
+                                    <form class="txtForm" id="needs-validation" novalidate>
+
                                         <h6 id="modelo" style="display: none"></h6>
                                         <div class="row">
                                             <div class="form-group col-md-7">
                                                 <label for="inputNombre">Nombre *</label>
-                                                <input type="text" class="form-control" id="inputNombre" placeholder="Juan Carlos Estofado">
+                                                <input type="text" class="form-control" id="inputNombre" placeholder="Juan Carlos Estofado" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-9">
                                                 <label for="inputNumero">Numero de tarjeta *</label>
-                                                <input type="text" class="form-control" id="inputNumero" placeholder="2837710573192844">
+                                                <input type="text" class="form-control" id="inputNumero" placeholder="2837710573192844" required>
                                             </div>
                                             <div class="form-group col-md-3">
                                                 <label for="inputCVV">CVV *</label>
-                                                <input type="text" class="form-control" id="inputCVV" placeholder="441">
+                                                <input type="text" class="form-control" id="inputCVV" placeholder="441" required>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -370,7 +356,7 @@
                                                 <label for="inputVencimiento">Fecha de Vencimiento *</label>
                                                 <div class="row">
                                                     <div class="form-group col-md-7 col-sm-7">
-                                                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputMesVencimiento">
+                                                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputMesVencimiento" required>
                                                             <option value="01">Elegir opcion</option>
                                                             <option value="Enero">Enero</option>
                                                             <option value="Febrero">Febrero </option>
@@ -385,7 +371,7 @@
                                                             <option value="Noviembre">Noviembre</option>
                                                             <option value="Diciembre">Diciembre</option>
                                                         </select>
-                                                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputAñoVencimiento">
+                                                        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputAñoVencimiento" required>
                                                             <option value="01">Elegir opcion</option>
                                                             <option value="2017"> 2017</option>
                                                             <option value="2018"> 2018</option>
@@ -409,16 +395,16 @@
 
                                         <div class="form-group">
                                             <label for="inputDireccion">Direccion *</label>
-                                            <input type="text" class="form-control" id="inputDireccion" placeholder="Bv. Los Granaderos 2769">
+                                            <input type="text" class="form-control" id="inputDireccion" placeholder="Bv. Los Granaderos 2769" required>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputLocalidad">Localidad *</label>
-                                                <input type="text" class="form-control" id="inputLocalidad" placeholder="Cordoba">
+                                                <input type="text" class="form-control" id="inputLocalidad" placeholder="Cordoba" required>
                                             </div>
                                             <div class="form-group col-md-4 col-sm-8">
                                                 <label for="inputProvincia">Provincia *</label>
-                                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0 col-sm-8" id="inputProvincia">
+                                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0 col-sm-8" id="inputProvincia" required>
                                                     <option value="00">Elegir opcion</option>
                                                     <option value="Buenos Aires">Buenos Aires</option>
                                                     <option value="Cordoba">Cordoba</option>
@@ -430,7 +416,7 @@
                                             </div>
                                             <div class="form-group col-md-2 col-sm-4">
                                                 <label for="inputZip">Zip *</label>
-                                                <input type="text" class="form-control" id="inputZip" placeholder="5001">
+                                                <input type="text" class="form-control" id="inputZip" placeholder="5001" required>
                                             </div>
                                         </div>
                                     </form>
@@ -444,7 +430,39 @@
                 </div>
             </div>
         </div>
-        
+
+        <script>
+            (function() {
+                'use strict';
+
+                window.addEventListener('load', function() {
+                    var form = document.getElementById('needs-validation');
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                }, false);
+            })();
+        </script>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDxJnFFYwtvv-hiU0SW8t2q8X440Je9fWA",
+                authDomain: "southern-b4af4.firebaseapp.com",
+                databaseURL: "https://southern-b4af4.firebaseio.com",
+                projectId: "southern-b4af4",
+                storageBucket: "southern-b4af4.appspot.com",
+                messagingSenderId: "239237624298"
+            };
+            firebase.initializeApp(config);
+        </script>
+
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.js"></script>
         <script src="vendor/popper/popper.min.js"></script>
