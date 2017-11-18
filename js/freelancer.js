@@ -1,6 +1,17 @@
 (function($) {
     "use strict"; // Start of use strict
 
+    window.addEventListener('load', function() {
+        var form = document.getElementById('needs-validation');
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    }, false);
+
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -112,27 +123,57 @@ function validador(){
 
     if( nombre == null || nombre.length == 0 || /^\s+$/.test(nombre) || nombre.length <= 4 ) {
         todo_correcto = false;
+        document.getElementById("inputNombre").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputNombre").style.border = "1px solid green";
     }
     if (numero == null || numero.length == 0 || /^\s+$/.test(numero) || isNaN(numero) || numero % 1 != 0 || numero <= 0 || numero.length <= 14 || numero.length >= 18){
         todo_correcto = false;
+        document.getElementById("inputNumero").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputNumero").style.border = "1px solid green";
     }
-    if (cvv == null || cvv.length == 0 || /^\s+$/.test(cvv) || isNaN(cvv) || cvv % 1 != 0 || cvv <= 0 || cvv.length <= 2 || cvv.length >= 4 ){
+    if (cvv == null || cvv.length == 0 || /^\s+$/.test(cvv) || isNaN(cvv) || cvv % 1 != 0 || cvv <= 0 || cvv.length <= 2 || cvv.length >= 4){
         todo_correcto = false;
+        document.getElementById("inputCVV").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputCVV").style.border = "1px solid green";
     }
-    if( mes == null || mes == 0 || año == null || año == 0 ){
+    if( mes == null || mes == 0 ){
         todo_correcto = false;
+        document.getElementById("inputMesVencimiento").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputMesVencimiento").style.border = "1px solid green";
+    }
+    if (año == null || año == 0 ){
+        todo_correcto = false;
+        document.getElementById("inputAñoVencimiento").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputAñoVencimiento").style.border = "1px solid green";
     }
     if( dir == null || dir.length == 0 || /^\s+$/.test(dir) || dir.length <= 8 ) {
         todo_correcto = false;
+        document.getElementById("inputDireccion").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputDireccion").style.border = "1px solid green";
     }
     if( locali == null || locali.length == 0 || /^\s+$/.test(locali) || locali.length <= 4 ) {
         todo_correcto = false;
+        document.getElementById("inputLocalidad").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputLocalidad").style.border = "1px solid green";
     }
     if( prov == null || prov == 0 ) {
         todo_correcto = false;
+        document.getElementById("inputProvincia").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputProvincia").style.border = "1px solid green";
     }
     if (zip == null || zip.length == 0 || /^\s+$/.test(zip) || isNaN(zip) || zip % 1 != 0 || zip <= 0 || zip.length <= 3 || zip.length >= 6){
         todo_correcto = false;
+        document.getElementById("inputZip").style.border = "1px solid red";
+    }else{
+        document.getElementById("inputZip").style.border = "1px solid green";
     }
 
     if(!todo_correcto){

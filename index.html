@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-sm-6 col-md-8 col-6">
+                    <div class="col-sm-3 col-md-8 col-6">
                         <button class="navbar-toggler align-self-center" type="button2" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                             Menu
                             <i class="fa fa-bars"></i>
@@ -205,7 +205,7 @@
         </footer>
 
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-        <div class="scroll-top d-lg-none">
+        <div class="scroll-top d-lg-none d-md-none">
             <a class="btn btn-primary js-scroll-trigger page-top">
                 <i id="btn_up" class="fa fa-chevron-up"></i>
             </a>
@@ -357,7 +357,7 @@
                                                 <div class="row">
                                                     <div class="form-group col-md-7 col-sm-7">
                                                         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputMesVencimiento" required>
-                                                            <option value="01">Elegir opcion</option>
+                                                            <option value="00">Elegir opcion</option>
                                                             <option value="Enero">Enero</option>
                                                             <option value="Febrero">Febrero </option>
                                                             <option value="Marzo">Marzo</option>
@@ -372,7 +372,7 @@
                                                             <option value="Diciembre">Diciembre</option>
                                                         </select>
                                                         <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inputAñoVencimiento" required>
-                                                            <option value="01">Elegir opcion</option>
+                                                            <option value="00">Elegir opcion</option>
                                                             <option value="2017"> 2017</option>
                                                             <option value="2018"> 2018</option>
                                                             <option value="2019"> 2019</option>
@@ -430,23 +430,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            (function() {
-                'use strict';
-
-                window.addEventListener('load', function() {
-                    var form = document.getElementById('needs-validation');
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                }, false);
-            })();
-        </script>
 
         <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
