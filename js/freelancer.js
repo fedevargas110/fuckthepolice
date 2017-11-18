@@ -71,6 +71,7 @@ function cargarRelojes(tipo) {
             const img = document.createElement("img");
             const ul = document.createElement("ul");
             const btn = document.createElement("button");
+            const hr = document.createElement("hr");
 
             div.classList = "col-sm-4 portfolio-item";
             div.id = s.key;
@@ -89,19 +90,21 @@ function cargarRelojes(tipo) {
             })
 
             btn.id = s.key;
-
             btn.onclick = () => {
                 $("#modelo").text(s.val().Nombre);
                 modalFixer();
             };
             btn.setAttribute( "data-toggle", "modal");
-
             $(btn).addClass("btn btn-outline-success");
             btn.innerHTML = `${s.val().Precio}$`;
+            
+            $(hr).addClass("my-4 d-lg-none d-md-none d-sm-block");
+            
             div.append(img);
             div.append(h5);
             div.append(ul);
             div.append(btn);
+            div.append(hr);
             $(`#lista_${tipo}`).append(div);
         })
     })
