@@ -24,12 +24,13 @@ Southern usa un numero de dependecias para funcionar correctamente:
 | Nombre | Descripcion |
 | ------ | ------ |
 | Twitter Bootstrap 4 | La UI para diseñar paginas web modernas |
-| Font-awesome | Tipo de texto utilizado |
+| Font-awesome | Iconos utilizados |
 | jQuery | Es un framework de Javascript  |
 | jQuery.easing | Plugin de jquery para las animaciones |
 | Popper.js | Plugin de javascript para el diseño web |
-| Firebase | Aqui se aloja el parte del contenido de la pagina |
-| Storage | Aqui se alojan parte de las imagenes de la pagina  |
+| Firebase | Base de datos |
+| Storage | Base de datos para imagenes |
+| Google Maps API | Mapas de google |
 
 Se utilizo Trello para el desarrollo de la pagina web.
 https://trello.com/b/ITs5Rl6k/southern
