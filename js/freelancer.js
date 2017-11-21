@@ -97,9 +97,9 @@ function cargarRelojes(tipo) {
             btn.setAttribute( "data-toggle", "modal");
             $(btn).addClass("btn btn-outline-success");
             btn.innerHTML = `${s.val().Precio}$`;
-            
+
             $(hr).addClass("my-4 d-lg-none d-md-none d-sm-block");
-            
+
             div.append(img);
             div.append(h5);
             div.append(ul);
@@ -180,9 +180,22 @@ function validador(){
     }
 
     if(!todo_correcto){
-        alert('Algunos campos no están correctos, vuelva a revisarlos');
+        alert('¡Error! Haz algunos cambios antes de volver a enviar el formulario.');
     }else{
         comprar(nId, nombre, numero, cvv, mes, año, dir, locali, prov, zip);
+        document.getElementById("inputNombre").style.border = "1px solid rgba(0, 0, 0, 0.15"; 
+        document.getElementById("inputNumero").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        document.getElementById("inputCVV").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        document.getElementById("inputMesVencimiento").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        document.getElementById("inputAñoVencimiento").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        document.getElementById("inputDireccion").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        document.getElementById("inputLocalidad").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        document.getElementById("inputProvincia").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        document.getElementById("inputZip").style.border = "1px solid rgba(0, 0, 0, 0.15";
+        
+        $('#formulario').modal('hide');
+        $('#compraRealizada').modal('show');
+
     }
 };
 

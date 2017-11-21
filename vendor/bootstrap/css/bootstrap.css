@@ -483,7 +483,7 @@ th {
 
 label {
     display: inline-block;
-    margin-bottom: .5rem;
+    /*! margin-bottom: .5rem; */
 }
 
 button:focus {
@@ -9877,4 +9877,12 @@ a.text-gray-dark:hover {
 #imgMini {
     width: 50px;
     height: auto;
+}
+
+.imgMini2 {
+    max-width: 50%;
+    height: auto;
+    border-radius: 150px; 
+    -webkit-border-radius: 150px; 
+    -moz-border-radius: 150px; 
 }
