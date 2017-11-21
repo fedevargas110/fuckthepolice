@@ -81,8 +81,6 @@ function cargarRelojes(tipo) {
             img.src = s.val().Imagen;
             img.classList = "img-fluid";
 
-            ul.classList = "listaCaract";
-
             s.val().Caracteristicas.forEach( (e) => {
                 const li = document.createElement("li");
                 li.innerHTML = e;
