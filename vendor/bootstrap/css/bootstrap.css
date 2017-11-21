@@ -4341,7 +4341,7 @@ tbody.collapse.show {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
+    display: block;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -9849,17 +9849,9 @@ a.text-gray-dark:hover {
     -webkit-text-stroke-width: 2px;
 }
 
-.listaCaract {
-    text-align: left;
-}
-
 #centrator {
-    align-items: center;
     text-align: right;
-}
-
-#achicador {
-    height: 213px;
+    align-self: center;
 }
 
 #btn_up {
@@ -9874,14 +9866,6 @@ a.text-gray-dark:hover {
 .panel-title {
     display: inline;
     font-weight: bold;
-}
-
-.checkbox.pull-right {
-    margin: 0;
-}
-
-.pl-ziro {
-    padding-left: 0px;
 }
 
 .txtForm {
