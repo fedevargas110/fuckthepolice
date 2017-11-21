@@ -31,6 +31,9 @@ Southern usa un numero de dependecias para funcionar correctamente:
 | Firebase | Aqui se aloja el parte del contenido de la pagina |
 | Storage | Aqui se alojan parte de las imagenes de la pagina  |
 
+Se utilizo Trello para el desarrollo de la pagina web.
+https://trello.com/b/ITs5Rl6k/southern
+
 #  Capturas
 ### Como comprar:
 
