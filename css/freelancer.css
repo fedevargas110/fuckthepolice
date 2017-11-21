@@ -253,7 +253,7 @@ header.masthead .intro-text .skills {
 
 .portfolio-modal .close-modal {
     position: absolute;
-    top: 1%;
+    top: 0%;
     right: 1%;
     width: 75px;
     height: 75px;
