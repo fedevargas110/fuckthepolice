@@ -1,5 +1,6 @@
-# **SOUTHERN - Relojes** 
+# **SOUTHERN - Relojes**
 [![](https://firebasestorage.googleapis.com/v0/b/southern-b4af4.appspot.com/o/logoSouthernMin.png?alt=media&token=fd37304f-20a3-444c-b01e-70766ab440ea)](https://tinchoolivari.github.io/fuckthepolice/)
+
 Southern es un sistema de compra online, donde podras comprar los mejores relojes que quieras con envio a tu casa. Los relojes que podras encontrar en nuestro sitio, son los que por el momento se encuentran verificados con un _100%  de CALIDAD_.
 
   - Abri [SOUTHERN](https://tinchoolivari.github.io/fuckthepolice/).
@@ -19,6 +20,7 @@ _Hay una serie de animaciones para que el recorrido por la web sea mas agradable
 
 # Dependencias
 Southern usa un numero de dependecias para funcionar correctamente:
+
 | Nombre | Descripcion |
 | ------ | ------ |
 | Twitter Bootstrap 4 | La UI para diseñar paginas web modernas |
