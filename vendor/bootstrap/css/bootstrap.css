@@ -5935,10 +5935,11 @@ button.close {
 }
 
 .modal-header {
+    position: static;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
+    display: block;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -5947,8 +5948,7 @@ button.close {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 15px;
-    border-bottom: 1px solid #eceeef;
+    padding: 20px;
 }
 
 .modal-title {
